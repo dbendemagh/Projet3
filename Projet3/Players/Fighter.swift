@@ -9,8 +9,8 @@
 import Foundation
 
 class Fighter : Player {
-    init() {
-        super.init(name: "", life: 100, strength: 10, arm: "épée")
+    init(name: String) {
+        super.init(name: name, life: 100, strength: 10, arm: "épée")
     }
 }
 

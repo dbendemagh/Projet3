@@ -9,7 +9,7 @@
 import Foundation
 
 class Player {
-    let name: String
+    var name: String
     var life: Int
     let strength: Int
     var arm: String

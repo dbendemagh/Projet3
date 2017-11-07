@@ -10,3 +10,8 @@ import Foundation
 
 print("Hello, World!")
 
+var g = Game()
+
+g.createTeam()
+g.listPlayers()
+

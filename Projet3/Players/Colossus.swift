@@ -9,7 +9,7 @@
 import Foundation
 
 class Colossus : Player {
-    init() {
-        super.init(name: "", life: 200, strength: 5, arm: "")
+    init(name: String) {
+        super.init(name: name, life: 200, strength: 5, arm: "")
     }
 }

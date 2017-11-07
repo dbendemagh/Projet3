@@ -9,8 +9,8 @@
 import Foundation
 
 class Dwarf: Player {
-    init() {
-        super.init(name: "", life: 50, strength: 20, arm: "Chopped")
+    init(name: String) {
+        super.init(name: name, life: 50, strength: 20, arm: "Chopped")
     }
 }
 

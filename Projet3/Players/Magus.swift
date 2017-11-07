@@ -9,7 +9,7 @@
 import Foundation
 
 class Magus : Player {
-    init() {
-        super.init(name: "", life: 80, strength: 5, arm: "")
+    init(name: String) {
+        super.init(name: name, life: 80, strength: 5, arm: "")
     }
 }

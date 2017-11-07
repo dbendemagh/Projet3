@@ -13,6 +13,8 @@
 		655BE57E1FB11B05009B31C8 /* Magus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE57D1FB11B05009B31C8 /* Magus.swift */; };
 		655BE5801FB11B2B009B31C8 /* Colossus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE57F1FB11B2B009B31C8 /* Colossus.swift */; };
 		655BE5821FB11B52009B31C8 /* Dwarf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5811FB11B52009B31C8 /* Dwarf.swift */; };
+		655BE5841FB22A07009B31C8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5831FB22A07009B31C8 /* Game.swift */; };
+		655BE5861FB22A3D009B31C8 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5851FB22A3D009B31C8 /* Team.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +37,8 @@
 		655BE57D1FB11B05009B31C8 /* Magus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magus.swift; sourceTree = "<group>"; };
 		655BE57F1FB11B2B009B31C8 /* Colossus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colossus.swift; sourceTree = "<group>"; };
 		655BE5811FB11B52009B31C8 /* Dwarf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dwarf.swift; sourceTree = "<group>"; };
+		655BE5831FB22A07009B31C8 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		655BE5851FB22A3D009B31C8 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				655BE5711FB119C3009B31C8 /* main.swift */,
+				655BE5831FB22A07009B31C8 /* Game.swift */,
 			);
 			path = Projet3;
 			sourceTree = "<group>";
@@ -81,6 +86,7 @@
 				655BE57D1FB11B05009B31C8 /* Magus.swift */,
 				655BE57F1FB11B2B009B31C8 /* Colossus.swift */,
 				655BE5811FB11B52009B31C8 /* Dwarf.swift */,
+				655BE5851FB22A3D009B31C8 /* Team.swift */,
 			);
 			path = Players;
 			sourceTree = "<group>";
@@ -145,7 +151,9 @@
 			files = (
 				655BE5801FB11B2B009B31C8 /* Colossus.swift in Sources */,
 				655BE57A1FB11A89009B31C8 /* Player.swift in Sources */,
+				655BE5841FB22A07009B31C8 /* Game.swift in Sources */,
 				655BE5821FB11B52009B31C8 /* Dwarf.swift in Sources */,
+				655BE5861FB22A3D009B31C8 /* Team.swift in Sources */,
 				655BE57C1FB11AD5009B31C8 /* Fighter.swift in Sources */,
 				655BE5721FB119C3009B31C8 /* main.swift in Sources */,
 				655BE57E1FB11B05009B31C8 /* Magus.swift in Sources */,
