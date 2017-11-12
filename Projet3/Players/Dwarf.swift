@@ -10,7 +10,7 @@ import Foundation
 
 class Dwarf: Player {
     init(name: String) {
-        super.init(name: name, life: 50, strength: 20, arm: "Chopped")
+        super.init(name: name, life: 50, strength: 20, arm: .Chopped)
     }
 }
 

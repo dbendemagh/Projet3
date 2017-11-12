@@ -15,6 +15,11 @@
 		655BE5821FB11B52009B31C8 /* Dwarf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5811FB11B52009B31C8 /* Dwarf.swift */; };
 		655BE5841FB22A07009B31C8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5831FB22A07009B31C8 /* Game.swift */; };
 		655BE5861FB22A3D009B31C8 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5851FB22A3D009B31C8 /* Team.swift */; };
+		655BE5891FB86C2C009B31C8 /* Arm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5881FB86C2C009B31C8 /* Arm.swift */; };
+		655BE58B1FB86CBB009B31C8 /* Sword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE58A1FB86CBB009B31C8 /* Sword.swift */; };
+		655BE58D1FB86FFA009B31C8 /* Chopped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE58C1FB86FFA009B31C8 /* Chopped.swift */; };
+		655BE58F1FB870B2009B31C8 /* Shield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE58E1FB870B2009B31C8 /* Shield.swift */; };
+		655BE5911FB8BBC1009B31C8 /* Stick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5901FB8BBC1009B31C8 /* Stick.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +44,11 @@
 		655BE5811FB11B52009B31C8 /* Dwarf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dwarf.swift; sourceTree = "<group>"; };
 		655BE5831FB22A07009B31C8 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		655BE5851FB22A3D009B31C8 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		655BE5881FB86C2C009B31C8 /* Arm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arm.swift; sourceTree = "<group>"; };
+		655BE58A1FB86CBB009B31C8 /* Sword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sword.swift; sourceTree = "<group>"; };
+		655BE58C1FB86FFA009B31C8 /* Chopped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chopped.swift; sourceTree = "<group>"; };
+		655BE58E1FB870B2009B31C8 /* Shield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shield.swift; sourceTree = "<group>"; };
+		655BE5901FB8BBC1009B31C8 /* Stick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stick.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +65,7 @@
 		655BE5651FB119C3009B31C8 = {
 			isa = PBXGroup;
 			children = (
+				655BE5871FB86BF9009B31C8 /* Arms */,
 				655BE5781FB11A64009B31C8 /* Players */,
 				655BE5701FB119C3009B31C8 /* Projet3 */,
 				655BE56F1FB119C3009B31C8 /* Products */,
@@ -72,6 +83,7 @@
 		655BE5701FB119C3009B31C8 /* Projet3 */ = {
 			isa = PBXGroup;
 			children = (
+				655BE5851FB22A3D009B31C8 /* Team.swift */,
 				655BE5711FB119C3009B31C8 /* main.swift */,
 				655BE5831FB22A07009B31C8 /* Game.swift */,
 			);
@@ -86,9 +98,20 @@
 				655BE57D1FB11B05009B31C8 /* Magus.swift */,
 				655BE57F1FB11B2B009B31C8 /* Colossus.swift */,
 				655BE5811FB11B52009B31C8 /* Dwarf.swift */,
-				655BE5851FB22A3D009B31C8 /* Team.swift */,
 			);
 			path = Players;
+			sourceTree = "<group>";
+		};
+		655BE5871FB86BF9009B31C8 /* Arms */ = {
+			isa = PBXGroup;
+			children = (
+				655BE5881FB86C2C009B31C8 /* Arm.swift */,
+				655BE58A1FB86CBB009B31C8 /* Sword.swift */,
+				655BE58C1FB86FFA009B31C8 /* Chopped.swift */,
+				655BE58E1FB870B2009B31C8 /* Shield.swift */,
+				655BE5901FB8BBC1009B31C8 /* Stick.swift */,
+			);
+			path = Arms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,10 +172,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655BE5911FB8BBC1009B31C8 /* Stick.swift in Sources */,
 				655BE5801FB11B2B009B31C8 /* Colossus.swift in Sources */,
 				655BE57A1FB11A89009B31C8 /* Player.swift in Sources */,
+				655BE5891FB86C2C009B31C8 /* Arm.swift in Sources */,
+				655BE58D1FB86FFA009B31C8 /* Chopped.swift in Sources */,
+				655BE58F1FB870B2009B31C8 /* Shield.swift in Sources */,
 				655BE5841FB22A07009B31C8 /* Game.swift in Sources */,
 				655BE5821FB11B52009B31C8 /* Dwarf.swift in Sources */,
+				655BE58B1FB86CBB009B31C8 /* Sword.swift in Sources */,
 				655BE5861FB22A3D009B31C8 /* Team.swift in Sources */,
 				655BE57C1FB11AD5009B31C8 /* Fighter.swift in Sources */,
 				655BE5721FB119C3009B31C8 /* main.swift in Sources */,

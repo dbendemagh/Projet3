@@ -12,7 +12,4 @@ class Team {
     var name = ""
     var team = [Player]()
     
-    //init() {
-    //    team = [Player]()
-    //}
 }

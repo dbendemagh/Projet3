@@ -8,10 +8,8 @@
 
 import Foundation
 
-print("Hello, World!")
+let g = Game()
 
-var g = Game()
+g.start()
 
-g.createTeam()
-g.listPlayers()
 

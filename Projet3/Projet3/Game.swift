@@ -11,20 +11,33 @@ import Foundation
 class Game {
     var teams = [Team]()
     var name = ""
+    let numberOfTeam = 2
+    let numberOfPlayer = 3
     
-    func createTeam() {
+    func start() {
+        
+        print("Bienvenue dans le jeu")
+        print("Vous allez affronter ...")
+        
+        for t1 in 0..<numberOfTeam {
+            createTeam(teamNumber: t1)
+        }
+        
+        listPlayers()
+    }
+    
+    func createTeam(teamNumber: Int) {
+        var playerList = [Player]()
         let t1 = Team()
-        teams.append(t1)
-        let t2 = Team()
-        teams.append(t2)
+        //teams.append(t1)
         
         // For each team
-        for t1 in 0...1 {
+        //for t1 in 0...1 {
             
             name = ""
             
             while name == "" {
-                print("Saisissez le nom de l'équipe n° \(t1 + 1)")
+                print("Saisissez le nom de l'équipe n° \(teamNumber + 1)")
                 
                 if let n = readLine() {
                     if n != "" {
@@ -33,11 +46,11 @@ class Game {
                 }
             }
             
-            teams[t1].name = name
-            
+            t1.name = name
             print("Equipe \(name)")
+            
             // Create 3 players
-            for p1 in 0...2 {
+            for p1 in 0..<numberOfPlayer {
                 
                 print("Veuillez choisir un personnage :")
                 print("1 - Combattant")
@@ -63,26 +76,29 @@ class Game {
                 switch choice {
                 case 1:
                     let p = Fighter(name: name)
-                    teams[t1].team.append(p)
+                    playerList.append(p)
                 case 2:
                     let p = Magus(name: name)
-                    teams[t1].team.append(p)
+                    playerList.append(p)
                 case 3:
                     let p = Colossus(name: name)
-                    teams[t1].team.append(p)
+                    playerList.append(p)
                 case 4:
                     let p = Dwarf(name: name)
-                    teams[t1].team.append(p)
+                    playerList.append(p)
                 default:
                     break
                 }
             }
-        }
+        
+            t1.team = playerList
+            teams.append(t1)
+        //}
     }
     
     func nameExist(name: String) -> Bool {
         
-        for t in 0...1 {
+        for t in 0..<teams.count {
             for p in teams[t].team {
                 if p.name == name {
                     return true
@@ -114,7 +130,7 @@ class Game {
                 }
             }
             
-            print("Veuiller choisir un type entre 1 et \(numberItems)")
+            print("Veuiller faire un choix entre 1 et \(numberItems)")
             
         } while true
     }

@@ -10,6 +10,6 @@ import Foundation
 
 class Magus : Player {
     init(name: String) {
-        super.init(name: name, life: 80, strength: 5, arm: "")
+        super.init(name: name, life: 80, strength: 5, arm: .Stick)
     }
 }

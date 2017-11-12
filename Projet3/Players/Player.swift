@@ -8,13 +8,21 @@
 
 import Foundation
 
+enum armList {
+    case Sword
+    case Chopped
+    case Stick
+    case WithoutArm
+}
+
 class Player {
-    var name: String
+    
+    let name: String
     var life: Int
     let strength: Int
-    var arm: String
+    var arm: armList
     
-    init(name: String, life: Int, strength: Int, arm: String) {
+    init(name: String, life: Int, strength: Int, arm: armList) {
         self.name = name
         self.life = life
         self.strength = strength

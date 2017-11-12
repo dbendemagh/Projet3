@@ -10,6 +10,6 @@ import Foundation
 
 class Colossus : Player {
     init(name: String) {
-        super.init(name: name, life: 200, strength: 5, arm: "")
+        super.init(name: name, life: 200, strength: 5, arm: .WithoutArm)
     }
 }
