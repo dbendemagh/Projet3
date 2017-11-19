@@ -10,6 +10,17 @@ import Foundation
 
 class Team {
     var name = ""
-    var team = [Player]()
+    var players = [Player]()
     
+    func isAlive() -> Bool {
+        var alive: Int = 0
+        
+        for player in players {
+            if player.isAlive() {
+                alive += 1
+            }
+        }
+        
+        return alive > 0
+    }
 }

@@ -11,6 +11,6 @@ import Foundation
 class Shield : Arm {
 
     init() {
-        super.init(strength: 20)
+        super.init(name: "Bouclier", damage: 5)
     }
 }

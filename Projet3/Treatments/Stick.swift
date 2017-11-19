@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Stick : Arm {
+class Stick : Treatment {
     
     init() {
-        super.init(strength: 5)
+        super.init(name: "Batôn", care: 10)
     }
 }

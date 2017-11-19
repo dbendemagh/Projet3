@@ -11,6 +11,6 @@ import Foundation
 class Chopped : Arm {
     
     init() {
-        super.init(strength: 20)
+        super.init(name: "Hache", damage: 20)
     }
 }

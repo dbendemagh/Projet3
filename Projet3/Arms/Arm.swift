@@ -8,10 +8,20 @@
 
 import Foundation
 
-class Arm {
-    var strength: Int
+enum listArms: String {
+    case Sword = "Epée"
+    case Chopped = "Hache"
+    case Stick = "Bâton"
+    case Shield = "Bouclier"
+}
+
+class Arm : Object {
+    //var name: listArms
+    var damage: Int
     
-    init(strength: Int) {
-        self.strength = strength
+    init(name: String, damage: Int) {
+        self.damage = damage
+        super.init(name: name)
+        
     }
 }
