@@ -10,10 +10,7 @@ import Foundation
 
 class Fighter : Player {
     init(name: String) {
-        //let o = Sword()
-        
         super.init(name: name, type: .Fighter, lifeMax: 100, object: Sword())
-        
     }
 }
 

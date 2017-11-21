@@ -11,7 +11,7 @@ import Foundation
 class Treatment : Object {
     let care: Int
     
-    init(name: String, care: Int) {
+    init(name: ObjectsList, care: Int) {
         self.care = care
         super.init(name: name)
     }

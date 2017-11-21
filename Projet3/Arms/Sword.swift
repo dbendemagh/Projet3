@@ -11,7 +11,6 @@ import Foundation
 class Sword: Arm {
     
     init() {
-        //super.init(name: .Sword, damage: 10)
-        super.init(name: "Epée", damage: 10)
+        super.init(name: .Sword, damage: 10)
     }
 }

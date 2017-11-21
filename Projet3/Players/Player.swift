@@ -21,16 +21,14 @@ class Player {
     let type: playerType
     var life: Int
     let lifeMax: Int
-    //var arm: Arm
-    var object: Object
+    var object: Object  // Arm or Treatment
+    var experience: Int = 0
     
     init(name: String, type: playerType, lifeMax: Int, object: Object) {
         self.name = name
         self.type = type
         self.lifeMax = lifeMax
         self.life = lifeMax
-        //self.strength = strength
-        //self.arm = Arm(name: arm.name, damage: arm.damage)
         self.object = object
     }
     
@@ -40,6 +38,7 @@ class Player {
         if self.isAlive() {
             // Player to attack alive ?
             if player.isAlive() {
+                print(name + " attaque " + player.name)
                 
                 if let arm = object as? Arm {
                     player.life = max(player.life - arm.damage, 0)
@@ -59,8 +58,6 @@ class Player {
             print(name + " ne peut pas attaquer, il est mort !")
         }
     }
-    
-    
     
     func isAlive() -> Bool{
         return life > 0

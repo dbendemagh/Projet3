@@ -42,91 +42,59 @@ class Game {
         var playerList = [Player]()
         let team = Team()
         
-            //var teamName = ""
-            
-            //while teamName == "" {
-                print("")
-                print("Saisissez le nom de l'équipe n° \(teamNumber + 1)")
-                
-                //teamName = InputString()
-                
-//                if let n = readLine() {
-//                    if n != "" {
-//                        teamName = n
-//                    }
-//                }
-            //}
-            
-            team.name = InputString()
+        team.turnForChest = Int(arc4random_uniform(5) + 2)
+        print("Coffret : \(team.turnForChest)")
         
-            // Create players
-            for p1 in 0..<numberOfPlayer {
+        print("")
+        print("Saisissez le nom de l'équipe n° \(teamNumber + 1)")
+        
+        team.name = InputString()
+    
+        // Create players
+        for p1 in 0..<numberOfPlayer {
+            
+            print("Veuillez choisir le personnage n° \(p1 + 1)")
+            print("1 - Combattant")
+            print("2 - Mage")
+            print("3 - Colosse")
+            print("4 - Nain")
+            
+            let choice = inputInt(numberItems: 4)
+            
+            var playerName = ""
+            
+            while playerName == "" {
+                print("Saisissez le nom du personnage n° \(p1 + 1) :")
+                let n = InputString()
                 
-                print("Veuillez choisir le personnage n° \(p1 + 1)")
-                print("1 - Combattant")
-                print("2 - Mage")
-                print("3 - Colosse")
-                print("4 - Nain")
-                
-                let choice = inputInt(numberItems: 4)
-                
-                var playerName = ""
-                
-                while playerName == "" {
-                    print("Saisissez le nom du personnage n° \(p1 + 1) :")
-                    //if let n = readLine() {
-                    let n = InputString()
-                    
-                    //if nameExist(name: n) {
-                    if uniqueCharacterNamesArray.contains(n) {
-                        print("Le nom existe déjà !")
-                    } else {
-                        playerName = n
-                        uniqueCharacterNamesArray.append(n)
-                    }
-                }
-                
-                switch choice {
-                case 1:
-                    let p = Fighter(name: playerName)
-                    playerList.append(p)
-                case 2:
-                    let p = Magus(name: playerName)
-                    playerList.append(p)
-                case 3:
-                    let p = Colossus(name: playerName)
-                    playerList.append(p)
-                case 4:
-                    let p = Dwarf(name: playerName)
-                    playerList.append(p)
-                default:
-                    break
+                if uniqueCharacterNamesArray.contains(n) {
+                    print("Le nom existe déjà !")
+                } else {
+                    playerName = n
+                    uniqueCharacterNamesArray.append(n)
                 }
             }
-        
-            team.players = playerList
-            teams.append(team)
-    }
-    
-    func nameExist(name: String) -> Bool {
-        
-        if uniqueCharacterNamesArray.contains(name) {
-            return true
-        } else {
-            uniqueCharacterNamesArray.append(name)
-            return false
+            
+            switch choice {
+            case 1:
+                let p = Fighter(name: playerName)
+                playerList.append(p)
+            case 2:
+                let p = Magus(name: playerName)
+                playerList.append(p)
+            case 3:
+                let p = Colossus(name: playerName)
+                playerList.append(p)
+            case 4:
+                let p = Dwarf(name: playerName)
+                playerList.append(p)
+            default:
+                break
+            }
         }
-        
-//        for t in 0..<teams.count {
-//            //if teams[t].team.contains(where: ) {
-//            for p in teams[t].team {
-//                if p.name == name {
-//                    return true
-//                }
-//            }
-//        }
-        
     
+        team.players = playerList
+        teams.append(team)
     }
     
     func fight() {
@@ -156,54 +124,35 @@ class Game {
             print("Sélectionnez un personnage :")
             print("")
             ShowTeam(players: teams[attacker].players)
-//            for i in 0..<numberOfPlayer {
-//                let p: Player = teams[attacker].players[i]
-//
-//                let action: String
-//
-//                if p.type == .Magus {
-//                    action = "Soins"
-//                } else {
-//                    action = "Dégats"
-//                }
-//
-//                print("\(i + 1) - \(p.type.rawValue) \(p.name) - Vie : \(p.life) - Arme : \(p.arm.name.rawValue) (\(action) : \(p.arm.strength))")
-//            }
             
             choice = inputInt(numberItems: numberOfPlayer) - 1
             
             player1 = teams[attacker].players[choice]
             
-            if let magus = player1 as? Magus {  //}   player1.type == .Maggus {
+            // Chest appearing ?
+            chest(team: teams[attacker], indexPlayer: choice, numberOfTurn: numberOfTurn)
+            
+            if let magus = player1 as? Magus {
+                print("\(teams[attacker].turnForChest) \(numberOfTurn)")
+                
                 print("Sélectionnez le personnage que vous voulez soigner :")
                 print("")
                 ShowTeam(players: teams[attacker].players)
-//                for i in 0..<numberOfPlayer {
-//                    let p: Player = teams[attacker].players[i]
-//                    print("\(i + 1) - \(p.type.rawValue) \(p.name) - Vie : \(p.life)")
-//                }
                 
                 choice = inputInt(numberItems: numberOfPlayer) - 1
                 
                 player2 = teams[attacker].players[choice]
                 
-                print("\(magus.name) soigne \(player2.name).")
-                
                 magus.treat(player: player2)
             } else {
+                print("")
                 print("Sélectionnez votre adversaire :")
                 print("")
                 ShowTeam(players: teams[opponent].players)
-//                for i in 0..<numberOfPlayer {
-//                    let p: Player = teams[opponent].players[i]
-//                    print("\(i + 1) - \(p.type.rawValue) \(p.name) - Vie : \(p.life)")
-//                }
                 
                 choice = inputInt(numberItems: numberOfPlayer) - 1
                 
                 player2 = teams[opponent].players[choice]
-                
-                print(player1.name + " attaque " + player2.name)
                 
                 player1.attack(player: player2)
             }
@@ -220,6 +169,30 @@ class Game {
             // Your turn
             index = index ^ 1
             numberOfTurn += 1
+        }
+    }
+    
+    
+    // Chest appearance
+    func chest(team: Team, indexPlayer: Int, numberOfTurn: Int) {
+        //print("\(teams[attacker].turnForChest) \(numberOfTurn)")
+        let turnForChest = team.turnForChest
+        
+        if turnForChest > 0 && numberOfTurn >= turnForChest {
+            
+            let player = team.players[indexPlayer]
+            
+            print("")
+            
+            if let magus = player as? Magus {
+                print("Un coffret apparait ! " + magus.name + " obtient le super batôn de soins.")
+                player.object = SuperCareStick()
+            } else {
+                print("Un coffret apparait ! " + player.name + " obtient le batôn de poison.")
+                player.object = PoisonStick()
+            }
+            
+            team.turnForChest = 0   // Chest appears only one time
         }
     }
     
@@ -259,9 +232,9 @@ class Game {
                     }
                 }
                 
-                print("\(i + 1) - "
-                    + p.type.rawValue + " " + p.name
-                    + " - Vie : \(p.life) - Objet : " + p.object.name + " (" + action + " : \(points))")
+                //print("\(i + 1) - " + p.type.rawValue + " " + p.name + " - Vie : \(p.life) - Objet : " + p.object.name + " (" + action + " : \(points))")
+                print("\(i + 1) - \(p.type.rawValue) \(p.name) - Vie : \(p.life) - Objet : \(p.object.name.rawValue) (\(action) : \(points))")
+                
             } else {
                 print("\(i + 1) - " + p.type.rawValue + " " + p.name + " est mort")
             }

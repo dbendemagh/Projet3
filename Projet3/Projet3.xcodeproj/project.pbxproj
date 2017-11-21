@@ -19,9 +19,11 @@
 		655BE58B1FB86CBB009B31C8 /* Sword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE58A1FB86CBB009B31C8 /* Sword.swift */; };
 		655BE58D1FB86FFA009B31C8 /* Chopped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE58C1FB86FFA009B31C8 /* Chopped.swift */; };
 		655BE58F1FB870B2009B31C8 /* Shield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE58E1FB870B2009B31C8 /* Shield.swift */; };
-		655BE5911FB8BBC1009B31C8 /* Stick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5901FB8BBC1009B31C8 /* Stick.swift */; };
+		655BE5911FB8BBC1009B31C8 /* CareStick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5901FB8BBC1009B31C8 /* CareStick.swift */; };
 		655BE5931FC20937009B31C8 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5921FC20937009B31C8 /* Object.swift */; };
 		655BE5961FC2099E009B31C8 /* Treatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5951FC2099E009B31C8 /* Treatment.swift */; };
+		655BE5981FC358B9009B31C8 /* SuperCareStick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5971FC358B9009B31C8 /* SuperCareStick.swift */; };
+		655BE59A1FC361B0009B31C8 /* PoisonStick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5991FC361B0009B31C8 /* PoisonStick.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,9 +52,11 @@
 		655BE58A1FB86CBB009B31C8 /* Sword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sword.swift; sourceTree = "<group>"; };
 		655BE58C1FB86FFA009B31C8 /* Chopped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chopped.swift; sourceTree = "<group>"; };
 		655BE58E1FB870B2009B31C8 /* Shield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shield.swift; sourceTree = "<group>"; };
-		655BE5901FB8BBC1009B31C8 /* Stick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stick.swift; sourceTree = "<group>"; };
+		655BE5901FB8BBC1009B31C8 /* CareStick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareStick.swift; sourceTree = "<group>"; };
 		655BE5921FC20937009B31C8 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		655BE5951FC2099E009B31C8 /* Treatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treatment.swift; sourceTree = "<group>"; };
+		655BE5971FC358B9009B31C8 /* SuperCareStick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCareStick.swift; sourceTree = "<group>"; };
+		655BE5991FC361B0009B31C8 /* PoisonStick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisonStick.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 				655BE58A1FB86CBB009B31C8 /* Sword.swift */,
 				655BE58C1FB86FFA009B31C8 /* Chopped.swift */,
 				655BE58E1FB870B2009B31C8 /* Shield.swift */,
+				655BE5991FC361B0009B31C8 /* PoisonStick.swift */,
 			);
 			path = Arms;
 			sourceTree = "<group>";
@@ -123,7 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				655BE5951FC2099E009B31C8 /* Treatment.swift */,
-				655BE5901FB8BBC1009B31C8 /* Stick.swift */,
+				655BE5901FB8BBC1009B31C8 /* CareStick.swift */,
+				655BE5971FC358B9009B31C8 /* SuperCareStick.swift */,
 			);
 			path = Treatments;
 			sourceTree = "<group>";
@@ -186,7 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				655BE5911FB8BBC1009B31C8 /* Stick.swift in Sources */,
+				655BE5911FB8BBC1009B31C8 /* CareStick.swift in Sources */,
 				655BE5801FB11B2B009B31C8 /* Colossus.swift in Sources */,
 				655BE57A1FB11A89009B31C8 /* Player.swift in Sources */,
 				655BE5891FB86C2C009B31C8 /* Arm.swift in Sources */,
@@ -194,11 +200,13 @@
 				655BE58F1FB870B2009B31C8 /* Shield.swift in Sources */,
 				655BE5841FB22A07009B31C8 /* Game.swift in Sources */,
 				655BE5821FB11B52009B31C8 /* Dwarf.swift in Sources */,
+				655BE5981FC358B9009B31C8 /* SuperCareStick.swift in Sources */,
 				655BE5961FC2099E009B31C8 /* Treatment.swift in Sources */,
 				655BE58B1FB86CBB009B31C8 /* Sword.swift in Sources */,
 				655BE5861FB22A3D009B31C8 /* Team.swift in Sources */,
 				655BE5931FC20937009B31C8 /* Object.swift in Sources */,
 				655BE57C1FB11AD5009B31C8 /* Fighter.swift in Sources */,
+				655BE59A1FC361B0009B31C8 /* PoisonStick.swift in Sources */,
 				655BE5721FB119C3009B31C8 /* main.swift in Sources */,
 				655BE57E1FB11B05009B31C8 /* Magus.swift in Sources */,
 			);

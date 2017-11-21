@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Stick : Treatment {
+class CareStick : Treatment {
     
     init() {
-        super.init(name: "Batôn", care: 10)
+        super.init(name: .CareStick, care: 10)
     }
 }

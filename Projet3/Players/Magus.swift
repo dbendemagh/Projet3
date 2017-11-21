@@ -10,19 +10,20 @@ import Foundation
 
 class Magus : Player {
     init(name: String) {
-        super.init(name: name, type: .Magus, lifeMax: 80, object: Stick())
+        super.init(name: name, type: .Magus, lifeMax: 80, object: CareStick())
     }
     
     func treat(player: Player) {
         
-        // Magus alive ?
+        // Magus is alive ?
         if self.isAlive() {
-            // Player to treat alive ?
+            // Player to treat is alive ?
             if player.isAlive() {
                 if let treatment = self.object as? Treatment {
                     if player.life == player.lifeMax {
                         print(player.name + " a déjà tous ses points de vie.")
                     } else {
+                        print(name + " soigne " + player.name + ".")
                         let l = player.life
                         player.life = min(player.life + treatment.care, player.lifeMax)
                         print(player.name + " gagne \(player.life - l) points de vie.")

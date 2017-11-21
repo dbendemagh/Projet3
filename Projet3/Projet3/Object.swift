@@ -8,10 +8,19 @@
 
 import Foundation
 
+enum ObjectsList: String {
+    case Sword = "Epée"
+    case Chopped = "Hache"
+    case Shield = "Bouclier"
+    case PoisonStick = "Batôn de poison"
+    case CareStick = "Bâton de soins"
+    case SuperCareStick = "Super batôn de soins"
+}
+
 class Object {
-    var name: String
+    var name: ObjectsList
     
-    init(name: String) {
+    init(name: ObjectsList) {
         self.name = name
     }
 }

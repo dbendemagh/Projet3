@@ -9,8 +9,9 @@
 import Foundation
 
 class Team {
-    var name = ""
-    var players = [Player]()
+    var name = ""   // Team name
+    var players = [Player]()    // list of players
+    var turnForChest: Int = 0   // A chest will appear after a random number of turn
     
     func isAlive() -> Bool {
         var alive: Int = 0
