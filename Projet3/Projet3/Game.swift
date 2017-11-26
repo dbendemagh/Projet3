@@ -11,48 +11,105 @@ import Foundation
 class Game {
     var teams = [Team]()
     let numberOfTeam = 2
-    let numberOfPlayer = 3
+    let numberOfCharacter = 3
     var game: Bool = false
-    var uniqueCharacterNamesArray = [String]()
     
     func start() {
         
-        PrintLine()
+        printLine()
         print("⚔️      Bienvenue dans le jeu de combat        ⚔️")
         print("🛡  où deux équipes vont s'affronter à mort !  🛡")
-        PrintLine()
+        printLine()
         
-        initGame()
-        
-        fight()
-        
-    }
-    
-    func initGame() {
-        uniqueCharacterNamesArray.removeAll()
-        teams.removeAll()
+        game = true
         
         // Create teams
         for t1 in 0..<numberOfTeam {
             createTeam(teamNumber: t1)
         }
+        
+        while game {
+        
+            //initGame()
+        
+            fight()
+            
+            // Replay ?
+            print("")
+            print("Voulez-vous refaire une partie ?")
+            print("")
+            print("1 - Rejouer avec les mêmes équipes")
+            print("2 - Rejouer avec de nouvelles équipes")
+            print("3 - Quitter")
+            
+            let choice = inputInt(numberItems: 3)
+            
+            switch choice {
+            case 1:
+                resetTeams()
+            case 2:
+                teams.removeAll()
+                // Create teams
+                for t1 in 0..<numberOfTeam {
+                    createTeam(teamNumber: t1)
+                }
+            case 3:
+                game = false
+            default:
+                break
+            }
+        }
+        
     }
     
+    // Reset teams with originals objets
+    func resetTeams() {
+        for t in 0..<numberOfTeam {
+            for c in 0..<numberOfCharacter {
+                let character: Character = teams[t].characters[c]
+                
+                character.life = character.lifeMax
+                character.skill = 0
+                
+                switch character.type {
+                case .Fighter:
+                    character.objectInHand = Sword()
+                case .Magus:
+                    character.objectInHand = CareStick()
+                case .Colossus:
+                    character.objectInHand = Shield()
+                case .Dwarf:
+                    character.objectInHand = Chopped()
+                }
+            }
+        }
+    }
+    
+    // Create team
     func createTeam(teamNumber: Int) {
-        var playerList = [Player]()
+        var characterList = [Character]()
         let team = Team()
+        var tempTeamName: String = ""
+        var tempCharacterName: String = ""
+        var characterName: String = ""
+        var uniqueCharacterNamesArray = [String]()
         
-        team.turnForChest = Int(arc4random_uniform(5) + 2)
-        print("Coffret : \(team.turnForChest)")
+        //team.turnForChest = Int(arc4random_uniform(5) + 2)
+        //print("Coffret : \(team.turnForChest)")
         
         print("")
         print("Saisissez le nom de l'équipe n° \(teamNumber + 1)")
         
-        team.name = InputString()
-    
-        // Create players
-        for p1 in 0..<numberOfPlayer {
+        repeat {
+            tempTeamName = InputString()
+        } while tempTeamName == ""
+        
+        team.name = tempTeamName
+        
+        // Create characters
+        for p1 in 0..<numberOfCharacter {
             
+            print("")
             print("Veuillez choisir le personnage n° \(p1 + 1)")
             print("1 - Combattant")
             print("2 - Mage")
@@ -61,192 +118,140 @@ class Game {
             
             let choice = inputInt(numberItems: 4)
             
-            var playerName = ""
+            characterName = ""
             
-            while playerName == "" {
+            while characterName == "" {
                 print("Saisissez le nom du personnage n° \(p1 + 1) :")
-                let n = InputString()
                 
-                if uniqueCharacterNamesArray.contains(n) {
+                tempCharacterName = ""
+                
+                repeat {
+                    tempCharacterName = InputString()
+                } while tempCharacterName == ""
+                
+                // Check if the name is unique
+                if uniqueCharacterNamesArray.contains(tempCharacterName) {
                     print("Le nom existe déjà !")
                 } else {
-                    playerName = n
-                    uniqueCharacterNamesArray.append(n)
+                    characterName = tempCharacterName
+                    uniqueCharacterNamesArray.append(characterName)
                 }
             }
             
             switch choice {
             case 1:
-                let p = Fighter(name: playerName)
-                playerList.append(p)
+                let p = Fighter(name: characterName)
+                characterList.append(p)
             case 2:
-                let p = Magus(name: playerName)
-                playerList.append(p)
+                let p = Magus(name: characterName)
+                characterList.append(p)
             case 3:
-                let p = Colossus(name: playerName)
-                playerList.append(p)
+                let p = Colossus(name: characterName)
+                characterList.append(p)
             case 4:
-                let p = Dwarf(name: playerName)
-                playerList.append(p)
+                let p = Dwarf(name: characterName)
+                characterList.append(p)
             default:
                 break
             }
         }
-    
-        team.players = playerList
+        
+        // Add the characters to the team
+        team.characters = characterList
         teams.append(team)
     }
     
+    // Fight betweens the teams
     func fight() {
-        var index: Int = 0
+        var indexAttackerTeam: Int = 0      // Index of attacker team
+        var indexOpponentTeam: Int          // Index of opponent team in case of attack
+        var indexCharacter: Int             // Index of character
+        
+        var actingCharacter: Character      // Character who act : attack or treatment
+        var receivingCharacter: Character   // Character who receive : weapon attack or health care
+        
         var numberOfTurn: Int = 0
-        var attacker: Int
-        var opponent: Int
-        var player1: Player
-        var player2: Player
-        var choice: Int
+        var fight: Bool                     // Fight stop when a team is defeated
         
         print("")
         print("Début du combat")
-        print("")
         
-        game = true
+        fight = true
         
-        while game {
-            attacker = index
-            opponent = index ^ 1
+        while fight {
+            // The opponent index is the reverse of attacker index
+            indexOpponentTeam = indexAttackerTeam ^ 1   // 0 or 1
             
             print("")
-            print("Au tour de l'équipe \(teams[attacker].name)")
+            print("Au tour de l'équipe \(teams[indexAttackerTeam].name)")
             print("")
             
-            // Select players
+            // Select characters
             print("Sélectionnez un personnage :")
             print("")
-            ShowTeam(players: teams[attacker].players)
+            //ShowTeam(characters: teams[indexAttackerTeam].characters)
+            teams[indexAttackerTeam].showCharacters()
             
-            choice = inputInt(numberItems: numberOfPlayer) - 1
+            indexCharacter = inputInt(numberItems: numberOfCharacter) - 1
             
-            player1 = teams[attacker].players[choice]
+            actingCharacter = teams[indexAttackerTeam].characters[indexCharacter]
             
-            // Chest appearing ?
-            chest(team: teams[attacker], indexPlayer: choice, numberOfTurn: numberOfTurn)
+            // A chest will appear randomly
+            let randomChest = Int(arc4random_uniform(6))
             
-            if let magus = player1 as? Magus {
-                print("\(teams[attacker].turnForChest) \(numberOfTurn)")
+            // The magus take care of his team
+            if let magus = actingCharacter as? Magus {
+                
+                // The chest appears ?
+                if randomChest == 3 {
+                    print("Un coffre apparaît ! " + magus.name + " obtient le super batôn de soins.")
+                    magus.objectInHand = SuperCareStick()
+                }
                 
                 print("Sélectionnez le personnage que vous voulez soigner :")
                 print("")
-                ShowTeam(players: teams[attacker].players)
+                //ShowTeam(characters: teams[indexAttackerTeam].characters)
+                teams[indexAttackerTeam].showCharacters()
                 
-                choice = inputInt(numberItems: numberOfPlayer) - 1
+                indexCharacter = inputInt(numberItems: numberOfCharacter) - 1
                 
-                player2 = teams[attacker].players[choice]
+                receivingCharacter = teams[indexAttackerTeam].characters[indexCharacter]
                 
-                magus.treat(player: player2)
+                magus.treat(character: receivingCharacter)
             } else {
+                
+                // The chest appears ?
+                if randomChest == 3 {
+                    print("Un coffre apparait ! " + actingCharacter.name + " obtient le batôn de poison.")
+                    actingCharacter.objectInHand = PoisonStick()
+                }
+                
                 print("")
                 print("Sélectionnez votre adversaire :")
                 print("")
-                ShowTeam(players: teams[opponent].players)
+                //ShowTeam(characters: teams[indexOpponentTeam].characters)
+                teams[indexOpponentTeam].showCharacters()
                 
-                choice = inputInt(numberItems: numberOfPlayer) - 1
+                indexCharacter = inputInt(numberItems: numberOfCharacter) - 1
                 
-                player2 = teams[opponent].players[choice]
+                receivingCharacter = teams[indexOpponentTeam].characters[indexCharacter]
                 
-                player1.attack(player: player2)
+                actingCharacter.attack(character: receivingCharacter)
             }
             
-            // End of game ?
-            if !teams[opponent].isAlive() {
+            // Team defeated ?
+            if !teams[indexOpponentTeam].isAlive() {
                 print("")
-                print("L'équipe " + teams[attacker].name + " a gagné !")
+                print("L'équipe " + teams[indexAttackerTeam].name + " a vaincu l'équipe " + teams[indexOpponentTeam].name + " !")
+                print("")
                 print("Nombre de tours : \(numberOfTurn)")
                 
-                game = false
+                fight = false
             }
             
-            // Your turn
-            index = index ^ 1
+            // Change attacker team
+            indexAttackerTeam = indexAttackerTeam ^ 1   // 0 or 1
             numberOfTurn += 1
-        }
-    }
-    
-    
-    // Chest appearance
-    func chest(team: Team, indexPlayer: Int, numberOfTurn: Int) {
-        //print("\(teams[attacker].turnForChest) \(numberOfTurn)")
-        let turnForChest = team.turnForChest
-        
-        if turnForChest > 0 && numberOfTurn >= turnForChest {
-            
-            let player = team.players[indexPlayer]
-            
-            print("")
-            
-            if let magus = player as? Magus {
-                print("Un coffret apparait ! " + magus.name + " obtient le super batôn de soins.")
-                player.object = SuperCareStick()
-            } else {
-                print("Un coffret apparait ! " + player.name + " obtient le batôn de poison.")
-                player.object = PoisonStick()
-            }
-            
-            team.turnForChest = 0   // Chest appears only one time
-        }
-    }
-    
-    // Check if team is alive
-    func teamsAlive() -> Bool {
-        var alive = 0
-        
-        for t in 0..<numberOfTeam {
-        
-            if teams[t].isAlive() {
-                alive += 1
-            }
-        }
-        
-        return alive == numberOfTeam
-    }
-    
-    func ShowTeam(players: [Player]) {
-        var points: Int = 0
-        
-        for i in 0..<players.count {
-            let p: Player = players[i]
-            
-            let action: String
-            
-            if p.isAlive() {
-                if p.type == .Magus {
-                    action = "Soins : "
-                    if let treatment = p.object as? Treatment {
-                        points = treatment.care
-                    }
-                } else {
-                    action = "Dégats"
-                    if let arm = p.object as? Arm {
-                        points = arm.damage
-                        
-                    }
-                }
-                
-                //print("\(i + 1) - " + p.type.rawValue + " " + p.name + " - Vie : \(p.life) - Objet : " + p.object.name + " (" + action + " : \(points))")
-                print("\(i + 1) - \(p.type.rawValue) \(p.name) - Vie : \(p.life) - Objet : \(p.object.name.rawValue) (\(action) : \(points))")
-                
-            } else {
-                print("\(i + 1) - " + p.type.rawValue + " " + p.name + " est mort")
-            }
-        }
-    }
-    
-    func listPlayers() {
-        for t in 0..<numberOfTeam {
-            print("Equipe " + teams[t].name)
-            for p in teams[t].players {
-                print("Nom : \(p.name)")
-            }
         }
     }
     
@@ -269,16 +274,12 @@ class Game {
     
     // Input String
     func InputString() -> String {
-        repeat {
-            if let input = readLine() {
-                if input != "" {
-                    return input
-                }
-            }
-        } while true
+        guard let data = readLine() else { return "" }
+        return data
     }
     
-    func PrintLine() {
+    // Print separator line
+    func printLine() {
         print(String(repeating: "⎻", count: 50))
     }
 }

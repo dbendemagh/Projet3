@@ -8,9 +8,9 @@
 
 import Foundation
 
-class PoisonStick : Arm {
+class PoisonStick : Weapon {
     
     init() {
-        super.init(name: .PoisonStick, damage: 30)
+        super.init(name: .poisonStick, damage: 40)
     }
 }

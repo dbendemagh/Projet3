@@ -8,12 +8,15 @@
 
 import Foundation
 
-class Arm : Object {
-    var damage: Int
+// Class containing weapon properties for the characters except the magus
+class Weapon : ObjectInHand {
+
+    var damage: Int = 0
     
     init(name: ObjectsList, damage: Int) {
         self.damage = damage
         super.init(name: name)
-        
     }
+    
+    
 }

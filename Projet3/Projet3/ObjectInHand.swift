@@ -8,16 +8,10 @@
 
 import Foundation
 
-enum ObjectsList: String {
-    case Sword = "Epée"
-    case Chopped = "Hache"
-    case Shield = "Bouclier"
-    case PoisonStick = "Batôn de poison"
-    case CareStick = "Bâton de soins"
-    case SuperCareStick = "Super batôn de soins"
-}
-
-class Object {
+// Object that the character will have in hand
+// It could be a weapon or a health care
+//
+class ObjectInHand {
     var name: ObjectsList
     
     init(name: ObjectsList) {

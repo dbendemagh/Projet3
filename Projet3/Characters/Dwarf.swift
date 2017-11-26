@@ -1,5 +1,5 @@
 //
-//  Colossus.swift
+//  Dwarf.swift
 //  Projet3
 //
 //  Created by Daniel BENDEMAGH on 06/11/2017.
@@ -8,8 +8,9 @@
 
 import Foundation
 
-class Colossus : Player {
+class Dwarf: Character {
     init(name: String) {
-        super.init(name: name, type: .Colossus, lifeMax: 150, object: Shield())
+        super.init(name: name, type: .Dwarf, lifeMax: 50, objectInHand: Chopped())
     }
 }
+

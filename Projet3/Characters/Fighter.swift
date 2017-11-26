@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Fighter : Player {
+class Fighter : Character {
     init(name: String) {
-        super.init(name: name, type: .Fighter, lifeMax: 100, object: Sword())
+        super.init(name: name, type: .Fighter, lifeMax: 100, objectInHand: Sword())
     }
 }
 

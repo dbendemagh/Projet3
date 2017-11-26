@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Shield : Arm {
+class Shield : Weapon {
 
     init() {
-        super.init(name: .Shield, damage: 5)
+        super.init(name: .shield, damage: 5)
     }
 }

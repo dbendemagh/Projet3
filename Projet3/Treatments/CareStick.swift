@@ -11,6 +11,6 @@ import Foundation
 class CareStick : Treatment {
     
     init() {
-        super.init(name: .CareStick, care: 10)
+        super.init(name: .careStick, care: 10)
     }
 }

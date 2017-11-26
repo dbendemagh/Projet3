@@ -11,6 +11,6 @@ import Foundation
 class SuperCareStick : Treatment {
     
     init() {
-        super.init(name: .SuperCareStick, care: 30)
+        super.init(name: .superCareStick, care: 30)
     }
 }

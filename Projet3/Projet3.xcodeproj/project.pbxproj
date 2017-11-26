@@ -8,22 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		655BE5721FB119C3009B31C8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5711FB119C3009B31C8 /* main.swift */; };
-		655BE57A1FB11A89009B31C8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5791FB11A89009B31C8 /* Player.swift */; };
+		655BE57A1FB11A89009B31C8 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5791FB11A89009B31C8 /* Character.swift */; };
 		655BE57C1FB11AD5009B31C8 /* Fighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE57B1FB11AD5009B31C8 /* Fighter.swift */; };
 		655BE57E1FB11B05009B31C8 /* Magus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE57D1FB11B05009B31C8 /* Magus.swift */; };
 		655BE5801FB11B2B009B31C8 /* Colossus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE57F1FB11B2B009B31C8 /* Colossus.swift */; };
 		655BE5821FB11B52009B31C8 /* Dwarf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5811FB11B52009B31C8 /* Dwarf.swift */; };
 		655BE5841FB22A07009B31C8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5831FB22A07009B31C8 /* Game.swift */; };
 		655BE5861FB22A3D009B31C8 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5851FB22A3D009B31C8 /* Team.swift */; };
-		655BE5891FB86C2C009B31C8 /* Arm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5881FB86C2C009B31C8 /* Arm.swift */; };
+		655BE5891FB86C2C009B31C8 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5881FB86C2C009B31C8 /* Weapon.swift */; };
 		655BE58B1FB86CBB009B31C8 /* Sword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE58A1FB86CBB009B31C8 /* Sword.swift */; };
 		655BE58D1FB86FFA009B31C8 /* Chopped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE58C1FB86FFA009B31C8 /* Chopped.swift */; };
 		655BE58F1FB870B2009B31C8 /* Shield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE58E1FB870B2009B31C8 /* Shield.swift */; };
 		655BE5911FB8BBC1009B31C8 /* CareStick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5901FB8BBC1009B31C8 /* CareStick.swift */; };
-		655BE5931FC20937009B31C8 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5921FC20937009B31C8 /* Object.swift */; };
-		655BE5961FC2099E009B31C8 /* Treatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5951FC2099E009B31C8 /* Treatment.swift */; };
+		655BE5931FC20937009B31C8 /* ObjectInHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5921FC20937009B31C8 /* ObjectInHand.swift */; };
 		655BE5981FC358B9009B31C8 /* SuperCareStick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5971FC358B9009B31C8 /* SuperCareStick.swift */; };
 		655BE59A1FC361B0009B31C8 /* PoisonStick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE5991FC361B0009B31C8 /* PoisonStick.swift */; };
+		655BE59C1FC5A331009B31C8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE59B1FC5A331009B31C8 /* Constants.swift */; };
+		655BE5A01FC9A860009B31C8 /* Treatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BE59F1FC9A860009B31C8 /* Treatment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,22 +42,23 @@
 /* Begin PBXFileReference section */
 		655BE56E1FB119C3009B31C8 /* Projet3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Projet3; sourceTree = BUILT_PRODUCTS_DIR; };
 		655BE5711FB119C3009B31C8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		655BE5791FB11A89009B31C8 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		655BE5791FB11A89009B31C8 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		655BE57B1FB11AD5009B31C8 /* Fighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fighter.swift; sourceTree = "<group>"; };
 		655BE57D1FB11B05009B31C8 /* Magus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magus.swift; sourceTree = "<group>"; };
 		655BE57F1FB11B2B009B31C8 /* Colossus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colossus.swift; sourceTree = "<group>"; };
 		655BE5811FB11B52009B31C8 /* Dwarf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dwarf.swift; sourceTree = "<group>"; };
 		655BE5831FB22A07009B31C8 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		655BE5851FB22A3D009B31C8 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		655BE5881FB86C2C009B31C8 /* Arm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arm.swift; sourceTree = "<group>"; };
+		655BE5881FB86C2C009B31C8 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		655BE58A1FB86CBB009B31C8 /* Sword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sword.swift; sourceTree = "<group>"; };
 		655BE58C1FB86FFA009B31C8 /* Chopped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chopped.swift; sourceTree = "<group>"; };
 		655BE58E1FB870B2009B31C8 /* Shield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shield.swift; sourceTree = "<group>"; };
 		655BE5901FB8BBC1009B31C8 /* CareStick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareStick.swift; sourceTree = "<group>"; };
-		655BE5921FC20937009B31C8 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
-		655BE5951FC2099E009B31C8 /* Treatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treatment.swift; sourceTree = "<group>"; };
+		655BE5921FC20937009B31C8 /* ObjectInHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectInHand.swift; sourceTree = "<group>"; };
 		655BE5971FC358B9009B31C8 /* SuperCareStick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCareStick.swift; sourceTree = "<group>"; };
 		655BE5991FC361B0009B31C8 /* PoisonStick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisonStick.swift; sourceTree = "<group>"; };
+		655BE59B1FC5A331009B31C8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		655BE59F1FC9A860009B31C8 /* Treatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treatment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +75,9 @@
 		655BE5651FB119C3009B31C8 = {
 			isa = PBXGroup;
 			children = (
-				655BE5941FC2097A009B31C8 /* Treatments */,
-				655BE5871FB86BF9009B31C8 /* Arms */,
-				655BE5781FB11A64009B31C8 /* Players */,
+				655BE5781FB11A64009B31C8 /* Characters */,
+				655BE59D1FC9A60B009B31C8 /* Weapons */,
+				655BE59E1FC9A826009B31C8 /* Treatments */,
 				655BE5701FB119C3009B31C8 /* Projet3 */,
 				655BE56F1FB119C3009B31C8 /* Products */,
 			);
@@ -95,39 +97,40 @@
 				655BE5851FB22A3D009B31C8 /* Team.swift */,
 				655BE5711FB119C3009B31C8 /* main.swift */,
 				655BE5831FB22A07009B31C8 /* Game.swift */,
-				655BE5921FC20937009B31C8 /* Object.swift */,
+				655BE5921FC20937009B31C8 /* ObjectInHand.swift */,
+				655BE59B1FC5A331009B31C8 /* Constants.swift */,
 			);
 			path = Projet3;
 			sourceTree = "<group>";
 		};
-		655BE5781FB11A64009B31C8 /* Players */ = {
+		655BE5781FB11A64009B31C8 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
-				655BE5791FB11A89009B31C8 /* Player.swift */,
+				655BE5791FB11A89009B31C8 /* Character.swift */,
 				655BE57B1FB11AD5009B31C8 /* Fighter.swift */,
 				655BE57D1FB11B05009B31C8 /* Magus.swift */,
 				655BE57F1FB11B2B009B31C8 /* Colossus.swift */,
 				655BE5811FB11B52009B31C8 /* Dwarf.swift */,
 			);
-			path = Players;
+			path = Characters;
 			sourceTree = "<group>";
 		};
-		655BE5871FB86BF9009B31C8 /* Arms */ = {
+		655BE59D1FC9A60B009B31C8 /* Weapons */ = {
 			isa = PBXGroup;
 			children = (
-				655BE5881FB86C2C009B31C8 /* Arm.swift */,
+				655BE5881FB86C2C009B31C8 /* Weapon.swift */,
 				655BE58A1FB86CBB009B31C8 /* Sword.swift */,
 				655BE58C1FB86FFA009B31C8 /* Chopped.swift */,
 				655BE58E1FB870B2009B31C8 /* Shield.swift */,
 				655BE5991FC361B0009B31C8 /* PoisonStick.swift */,
 			);
-			path = Arms;
+			path = Weapons;
 			sourceTree = "<group>";
 		};
-		655BE5941FC2097A009B31C8 /* Treatments */ = {
+		655BE59E1FC9A826009B31C8 /* Treatments */ = {
 			isa = PBXGroup;
 			children = (
-				655BE5951FC2099E009B31C8 /* Treatment.swift */,
+				655BE59F1FC9A860009B31C8 /* Treatment.swift */,
 				655BE5901FB8BBC1009B31C8 /* CareStick.swift */,
 				655BE5971FC358B9009B31C8 /* SuperCareStick.swift */,
 			);
@@ -194,21 +197,22 @@
 			files = (
 				655BE5911FB8BBC1009B31C8 /* CareStick.swift in Sources */,
 				655BE5801FB11B2B009B31C8 /* Colossus.swift in Sources */,
-				655BE57A1FB11A89009B31C8 /* Player.swift in Sources */,
-				655BE5891FB86C2C009B31C8 /* Arm.swift in Sources */,
+				655BE57A1FB11A89009B31C8 /* Character.swift in Sources */,
+				655BE5891FB86C2C009B31C8 /* Weapon.swift in Sources */,
 				655BE58D1FB86FFA009B31C8 /* Chopped.swift in Sources */,
 				655BE58F1FB870B2009B31C8 /* Shield.swift in Sources */,
 				655BE5841FB22A07009B31C8 /* Game.swift in Sources */,
 				655BE5821FB11B52009B31C8 /* Dwarf.swift in Sources */,
 				655BE5981FC358B9009B31C8 /* SuperCareStick.swift in Sources */,
-				655BE5961FC2099E009B31C8 /* Treatment.swift in Sources */,
 				655BE58B1FB86CBB009B31C8 /* Sword.swift in Sources */,
 				655BE5861FB22A3D009B31C8 /* Team.swift in Sources */,
-				655BE5931FC20937009B31C8 /* Object.swift in Sources */,
+				655BE5931FC20937009B31C8 /* ObjectInHand.swift in Sources */,
 				655BE57C1FB11AD5009B31C8 /* Fighter.swift in Sources */,
 				655BE59A1FC361B0009B31C8 /* PoisonStick.swift in Sources */,
+				655BE5A01FC9A860009B31C8 /* Treatment.swift in Sources */,
 				655BE5721FB119C3009B31C8 /* main.swift in Sources */,
 				655BE57E1FB11B05009B31C8 /* Magus.swift in Sources */,
+				655BE59C1FC5A331009B31C8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
