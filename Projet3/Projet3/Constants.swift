@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Objects list
 enum ObjectsList: String {
     case sword = "Epée"
     case chopped = "Hache"
@@ -18,7 +19,8 @@ enum ObjectsList: String {
     
 }
 
-let skills = ["Novice", "Expert", "Maître"]
+// Skills levels
+let skills = ["Novice", "Apprenti", "Adepte", "Expert", "Maître"]
 
 
 

@@ -22,14 +22,11 @@ class Magus : Character {
                     if character.life == character.lifeMax {
                         print(character.name + " a déjà tous ses points de vie.")
                     } else {
-                        if let treatment = objectInHand as? Treatment {
-                            print(name + " soigne " + character.name + ".")
-                            let l = character.life
-                            character.life = min(character.life + treatment.care, character.lifeMax)
-                            print(character.name + " gagne \(character.life - l) points de vie.")
-                        } else {
-                            print(character.name + " ne peut pas soigner !")
-                        }
+                        print(name + " soigne " + character.name + ".")
+                        let tempLife = character.life
+                        character.life = min(character.life + character.power, character.lifeMax)
+                        print(character.name + " gagne \(character.life - tempLife) points de vie.")
+
                     }
             } else {
                 print("\(character.name) ne peut pas être soigné, il est mort !")

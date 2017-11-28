@@ -30,8 +30,6 @@ class Game {
         
         while game {
         
-            //initGame()
-        
             fight()
             
             // Replay ?
@@ -42,7 +40,7 @@ class Game {
             print("2 - Rejouer avec de nouvelles équipes")
             print("3 - Quitter")
             
-            let choice = inputInt(numberItems: 3)
+            let choice = inputMenu(numberItems: 3)
             
             switch choice {
             case 1:
@@ -59,7 +57,6 @@ class Game {
                 break
             }
         }
-        
     }
     
     // Reset teams with originals objets
@@ -94,9 +91,6 @@ class Game {
         var characterName: String = ""
         var uniqueCharacterNamesArray = [String]()
         
-        //team.turnForChest = Int(arc4random_uniform(5) + 2)
-        //print("Coffret : \(team.turnForChest)")
-        
         print("")
         print("Saisissez le nom de l'équipe n° \(teamNumber + 1)")
         
@@ -116,7 +110,7 @@ class Game {
             print("3 - Colosse")
             print("4 - Nain")
             
-            let choice = inputInt(numberItems: 4)
+            let choice = inputMenu(numberItems: 4)
             
             characterName = ""
             
@@ -189,10 +183,9 @@ class Game {
             // Select characters
             print("Sélectionnez un personnage :")
             print("")
-            //ShowTeam(characters: teams[indexAttackerTeam].characters)
             teams[indexAttackerTeam].showCharacters()
             
-            indexCharacter = inputInt(numberItems: numberOfCharacter) - 1
+            indexCharacter = inputMenu(numberItems: numberOfCharacter) - 1
             
             actingCharacter = teams[indexAttackerTeam].characters[indexCharacter]
             
@@ -210,10 +203,9 @@ class Game {
                 
                 print("Sélectionnez le personnage que vous voulez soigner :")
                 print("")
-                //ShowTeam(characters: teams[indexAttackerTeam].characters)
                 teams[indexAttackerTeam].showCharacters()
                 
-                indexCharacter = inputInt(numberItems: numberOfCharacter) - 1
+                indexCharacter = inputMenu(numberItems: numberOfCharacter) - 1
                 
                 receivingCharacter = teams[indexAttackerTeam].characters[indexCharacter]
                 
@@ -229,10 +221,9 @@ class Game {
                 print("")
                 print("Sélectionnez votre adversaire :")
                 print("")
-                //ShowTeam(characters: teams[indexOpponentTeam].characters)
                 teams[indexOpponentTeam].showCharacters()
                 
-                indexCharacter = inputInt(numberItems: numberOfCharacter) - 1
+                indexCharacter = inputMenu(numberItems: numberOfCharacter) - 1
                 
                 receivingCharacter = teams[indexOpponentTeam].characters[indexCharacter]
                 
@@ -255,8 +246,8 @@ class Game {
         }
     }
     
-    // Input Int
-    func inputInt(numberItems: Int) -> Int {
+    // Input Menu
+    func inputMenu(numberItems: Int) -> Int {
         
         repeat {
             if let input = readLine() {

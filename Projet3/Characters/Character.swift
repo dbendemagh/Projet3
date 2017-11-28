@@ -25,6 +25,19 @@ class Character {
     var experience: Int = 0
     var skill: Int = 0
     
+    // damage or care + skill level
+    var power: Int {
+        get {
+            if let object = objectInHand as? Treatment {
+                return object.care + (skill * 2)
+            } else if let object = objectInHand as? Weapon {
+                return object.damage + (skill * 2)
+            }
+            
+            return 0
+        }
+    }
+    
     init(name: String, type: characterType, lifeMax: Int, objectInHand: ObjectInHand) {
         self.name = name
         self.type = type
@@ -41,24 +54,19 @@ class Character {
             if character.isAlive() {
                 print(name + " attaque " + character.name)
                 
-                if let weapon = objectInHand as? Weapon {
-                    let power = weapon.damage + (skill * 2)
-                    character.life = max(character.life - power, 0)
-                
-                    if character.life == 0 {
-                        print(character.name + " est vaincu")
-                    } else {
-                        print(character.name + " perd \(power) points")
-                    }
+                character.life = max(character.life - power, 0)
+            
+                if character.life == 0 {
+                    print(character.name + " est vaincu")
                 } else {
-                    print(character.name + " n'est pas armé !")
+                    print(character.name + " perd \(power) points")
                 }
                 
                 // Manage experience of attacker
                 experience += 1
                 
-                // Gains a level after 4 attacks
-                if experience == 4 {
+                // Gains a level after 3 attacks
+                if experience == 3 {
                     if skill < skills.count {
                         skill += 1
                         experience = 0
