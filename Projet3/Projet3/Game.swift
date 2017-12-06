@@ -59,7 +59,7 @@ class Game {
         }
     }
     
-    // Reset teams with originals objets
+    // Reset teams with originals objects
     func resetTeams() {
         for t in 0..<numberOfTeam {
             for c in 0..<numberOfCharacter {
@@ -176,8 +176,14 @@ class Game {
             // The opponent index is the reverse of attacker index
             indexOpponentTeam = indexAttackerTeam ^ 1   // 0 or 1
             
+            
+            
             print("")
-            print("Au tour de l'équipe \(teams[indexAttackerTeam].name)")
+            if (indexAttackerTeam == 0) {
+                print("🔵 Au tour de l'équipe \(teams[0].name) 🔵")
+            } else {
+                print("🔴 Au tour de l'équipe \(teams[1].name) 🔴")
+            }
             print("")
             
             // Select characters
